@@ -1,7 +1,7 @@
 # Golang FaceID API
-This API aims to create a backend infrastructure to allow user authentication by Face Recognition. The API receives a FRV (Face Representation Vector) from remote client and verifies if the given object matchs an existing FRV in the vector database. The API simply grants or deny access to the client.
+FaceID API aims to create a backend infrastructure to allow user authentication by Face Recognition. The API receives a FRV (Face Representation Vector) from remote client and verifies if the given object matchs an existing FRV in the vector database. The API simply grants or deny access to the client.
 
-This API can be used from any client that can send a HTTP request. The API is written in Golang and uses the REST architecture. The client can be written in any language, and can come from any platform (web, mobile, desktop, etc). This facilitates the integration of Face Recognition in any application. The process of getting the FRV from the client is not part of this API. 
+FaceID API can be used from any client that can send a HTTP request. The API is written in Golang and uses the REST architecture. The client can be written in any language, and can come from any platform (web, mobile, desktop, etc). This facilitates the integration of Face Recognition in any application. The process of getting the FRV from the client is not part of FaceID API. 
 
 ## Face Recognition Technology
 Face recognition is a technology that involves identifying and verifying individuals by analyzing and comparing their facial features. It's a subset of biometric identification, and it has various applications, including security systems, authentication, and user access control. Here's a simplified overview of how face recognition works:
@@ -52,5 +52,5 @@ Above we have an 128 dimension FRV (Face Representation Vector) of a numeric rep
 This FaceID API utilizes of a FRV sent by the client to identify if the given FRV matches any FRV in the database. If the given FRV matches any FRV in the database, the API grants access to the client. Otherwise, the API denies access to the client.
 
 ## Conclusion
-This project is a simple implementation of a Face Recognition API. It is a simple API that can be used to integrate Face Recognition in any application. The API is written in Golang and uses the REST architecture. The client can be written in any language, and can come from any platform (web, mobile, desktop, etc). If you want to implement Face Recognition in your application, you can use this API as a starting point. Please, feel free to contact me at `miguelangelomello@gmail.com` if you have any questions or suggestions. Thank you!
+This project is a simple implementation of a Face Recognition API. It is a simple API that can be used to integrate Face Recognition in any application. The API is written in Golang and uses the REST architecture. The client can be written in any language, and can come from any platform (web, mobile, desktop, etc). If you want to implement Face Recognition in your application, you can use FaceID API as a starting point. Please, feel free to contact me at `miguelangelomello@gmail.com` if you have any questions or suggestions. Thank you!
 
