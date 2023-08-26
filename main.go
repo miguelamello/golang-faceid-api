@@ -7,14 +7,15 @@ import (
 
 func main() {
 	// Setting up Gin in release mode
-	//gin.SetMode(gin.ReleaseMode)
+	gin.SetMode(gin.ReleaseMode)
 
+	// Initialize the routes
 	r := gin.Default()
 
 	// Define your routes here
-	r.GET("/", routes.GetRoot())
-	r.GET("/reference", routes.GetReference())
-	r.POST("/frv", routes.PostFRV())
+	r.GET("/", routes.GetReference)
+	r.GET("/reference", routes.GetReference)
+	r.POST("/vector", routes.SearchVector)
 
 	// Run the server
 	r.SetTrustedProxies(nil)
