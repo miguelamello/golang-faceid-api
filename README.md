@@ -9,6 +9,14 @@ FaceID API can be used from any client that can send a HTTP request. The API is 
 
 API Documentation is available at http://faceid.orionsoft.site/reference
 
+## Tecnology Stack
+
+- Golang
+- Gin Web Framework
+- QDrant Vector Database 
+- Vector Similarity Search
+- Docker
+- AWS EC2
 
 ## Face Recognition Technology
 
@@ -60,6 +68,8 @@ The FRV is a vector that represents the face of a person. It is a numerical repr
 Above we have an 128 dimension FRV (Face Representation Vector) of a numeric representation of someone's face. Different libraries can generate different dimension FRVs, which can be 256, 512 or even more dimensions long. We can think this FRV as a numeric unic stamp of someone's face. As no one has the same face, no one has the same FRV. So, a FRV can be used to identify someone against a database of FRVs. 
 
 This FaceID API utilizes of a FRV sent by the client to identify if the given FRV matches any FRV in the database. If the given FRV matches any FRV in the database, the API grants access to the client. Otherwise, the API denies access to the client.
+
+## Vector Database
 
 
 ## Conclusion
