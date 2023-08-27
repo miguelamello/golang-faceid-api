@@ -71,6 +71,9 @@ This FaceID API utilizes of a FRV sent by the client to identify if the given FR
 
 ## Vector Database
 
+A vector database is something new on the world of databases, and its usage is growing fast. In our case, we are using QDrant (https://qdrant.tech), a vector database that is open source and free to use. Remember that Face Representation Vectors are basically an array of float numbers that can be huge in size. On this FaceID API we are using a 128 dimension FRV, but it can be 256, 512 or even more dimensions long. So, we need a database that can store this huge amount of data and can perform fast searches on it. 
+
+Traditional SQL and NoSQL databases can be used to store FRVs, but they are not optimized for this kind of data. Vector databases are optimized for storing and searching vectors. They are also optimized for fast searches, and can perform searches on millions of vectors in a few milliseconds. This means a face can be identified in a few milliseconds, which is great for real time applications. 
 
 ## Conclusion
 
