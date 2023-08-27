@@ -1,13 +1,14 @@
 # Golang FaceID API
 
-FaceID API aims to create a backend infrastructure to allow user authentication by Face Recognition. The API receives a FRV (Face Representation Vector) from remote client and verifies if the given object match an existing FRV in the database, and so granting or denying access to the client.
+The FaceID API is designed to establish a backend infrastructure for user authentication through Face Recognition. This API functions by receiving a Face Representation Vector (FRV) from a remote client, then verifying whether this provided FRV corresponds to an existing one stored in the database. Based on this verification, access is either granted or denied to the client.
 
-FaceID API can be used from any client that can send a HTTP request. The API is written in Golang and uses the REST architecture. The client can be written in any language, and can come from any platform (web, mobile, desktop, etc). This facilitates the integration of Face Recognition in any application. The process of getting the FRV from the client is not part of FaceID API. 
+The FaceID API is accessible to any client capable of sending an HTTP request. Developed using Golang and following the REST architecture, the API offers flexibility in terms of client implementation. Clients can be developed in any programming language and can originate from various platforms such as web, mobile, or desktop. This seamless integration capability enables the incorporation of Face Recognition functionality into a diverse array of applications. Notably, the process of obtaining the FRV from the client falls outside the scope of the FaceID API's responsibilities.
 
 
 ## API Documentation  
 
 API Documentation is available at http://faceid.orionsoft.site/reference
+
 
 ## Tecnology Stack
 
@@ -17,6 +18,7 @@ API Documentation is available at http://faceid.orionsoft.site/reference
 - Vector Similarity Search
 - Docker
 - AWS EC2
+
 
 ## Face Recognition Technology
 
@@ -69,11 +71,13 @@ Above we have an 128 dimension FRV (Face Representation Vector) of a numeric rep
 
 This FaceID API utilizes of a FRV sent by the client to identify if the given FRV matches any FRV in the database. If the given FRV matches any FRV in the database, the API grants access to the client. Otherwise, the API denies access to the client.
 
+
 ## Vector Database
 
 A vector database is something new on the world of databases, and its usage is growing fast. In our case, we are using QDrant (https://qdrant.tech), a vector database that is open source and free to use. Remember that Face Representation Vectors are basically an array of float numbers that can be huge in size. On this FaceID API we are using a 128 dimension FRV, but it can be 256, 512 or even more dimensions long. So, we need a database that can store this huge amount of data and can perform fast searches on it. 
 
 Traditional SQL and NoSQL databases can be used to store FRVs, but they are not optimized for this kind of data. Vector databases are optimized for storing and searching vectors. They are also optimized for fast searches, and can perform searches on millions of vectors in a few milliseconds. This means a face can be identified in a few milliseconds, which is great for real time applications. 
+
 
 ## Conclusion
 

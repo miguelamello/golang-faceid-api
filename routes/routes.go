@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"os"
 	"encoding/json"
+	"bytes"
 
 	"github.com/gin-gonic/gin"
 	"github.com/miguelamello/golang-faceid-api/database"
@@ -113,9 +114,20 @@ func GetReference(c *gin.Context) {
 	// Convert Markdown to HTML
 	htmlContent := markdownToHTML(content)
 
+	// Read the content of the style.html file
+	cssContent, err := os.ReadFile("./reference/style.html")
+	if err != nil {
+		cssContent = []byte("")
+	}
+
+	// Concatenate HTML and CSS content
+	var concatenatedContent bytes.Buffer
+	concatenatedContent.Write(cssContent)
+	concatenatedContent.Write(htmlContent)
+	
 	// Set the appropriate headers and send the content as the response
 	c.Header("Content-Type", "text/html charset=utf-8")
-	c.String(http.StatusOK, string(htmlContent))
+	c.String(http.StatusOK, concatenatedContent.String())
 }
 
 // Route handler for getting the authorization response
