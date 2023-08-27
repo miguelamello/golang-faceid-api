@@ -9,6 +9,7 @@ The FaceID API is accessible to any client capable of sending an HTTP request. D
 
 API Documentation is available at http://faceid.orionsoft.site/reference
 
+Note: You can use the vectors located at file `vectors.json` in the root directory of this project to test the API. These vectors are already stored in the database.
 
 ## Tecnology Stack
 
