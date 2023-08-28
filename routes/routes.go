@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"fmt"
 	"net/http"
 	"os"
 	"encoding/json"
@@ -131,6 +132,7 @@ func GetReference(c *gin.Context) {
 	
 	// Set the appropriate headers and send the content as the response
 	c.Header("Content-Type", "text/html charset=utf-8")
+	c.Header("Content-Length", fmt.Sprint(len(htmlDoc)))
 	c.String(http.StatusOK, htmlDoc)
 }
 
