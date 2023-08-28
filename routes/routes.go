@@ -127,6 +127,7 @@ func GetReference(c *gin.Context) {
 	concatenatedContent.Write(htmlContent)
 
 	htmlHead := "<!DOCTYPE html><html><head>"
+	htmlHead += "<meta charset=utf-8>"
 	htmlHead += "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
 	htmlHead += "<title>FaceID Reference</title></head><body>"
 	htmlTail := "</body></html>"
