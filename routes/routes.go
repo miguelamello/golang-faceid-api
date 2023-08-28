@@ -124,10 +124,14 @@ func GetReference(c *gin.Context) {
 	var concatenatedContent bytes.Buffer
 	concatenatedContent.Write(cssContent)
 	concatenatedContent.Write(htmlContent)
+
+	htmlHead := "<!DOCTYPE html><html><head><title>FaceID Reference</title></head><body>"
+	htmlTail := "</body></html>"
+	htmlDoc := htmlHead + concatenatedContent.String() + htmlTail
 	
 	// Set the appropriate headers and send the content as the response
 	c.Header("Content-Type", "text/html charset=utf-8")
-	c.String(http.StatusOK, concatenatedContent.String())
+	c.String(http.StatusOK, htmlDoc)
 }
 
 // Route handler for getting the authorization response
